@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sagittarius A* | Black Hole Laboratory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">COSMIC LAB <span> / GENERAL RELATIVITY</span></div>
+  <div class="status">● SIMULATION ACTIVE</div>
+</header>
+
+<section class="hero">
+  <p class="eyebrow">MILKY WAY GALACTIC CENTRE</p>
+  <h1>SAGITTARIUS <span>A*</span></h1>
+  <p class="subtitle">Explore the physics of a supermassive black hole</p>
+  <div class="facts">
+    <div><strong>≈ 4 Million</strong><small>Solar masses</small></div>
+    <div><strong>≈ 26,000</strong><small>Light-years away</small></div>
+    <div><strong>Supermassive</strong><small>Black hole type</small></div>
+  </div>
+  <p class="intro">
+    Sagittarius A* is the supermassive black hole at the centre
+    of our Milky Way galaxy. Its gravity affects the motion of
+    nearby stars, gas and light.
+  </p>
+</section>
+
+<nav id="navigation">
+  <button class="active" data-target="overview">Overview</button>
+  <button data-target="structure">Structure</button>
+  <button data-target="spacetime">Spacetime</button>
+  <button data-target="light">Light paths</button>
+  <button data-target="objects">Object experiment</button>
+  <button data-target="relativity">Time & Relativity</button>
+  <button data-target="importance">Importance</button>
+</nav>
+
+<main>
+
+<!-- OVERVIEW -->
+<section id="overview" class="page active">
+  <h2>01 / Meet Sagittarius A*</h2>
+  <p class="description">
+    A black hole is a region of spacetime where gravity becomes so
+    strong that nothing can escape from inside its event horizon,
+    not even light.
+  </p>
+
+  <div class="simulation-card">
+    <div class="canvas-wrap">
+      <canvas id="blackholeCanvas"></canvas>
+      <div class="canvas-label">LIVE VISUALIZATION · NOT TO SCALE</div>
+    </div>
+    <div class="controls">
+      <button id="pauseBtn">Pause animation</button>
+      <button id="resetBtn">Reset view</button>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <article>
+      <h3>What is it?</h3>
+      <p>A supermassive black hole containing approximately four million solar masses.</p>
+    </article>
+    <article>
+      <h3>Where is it?</h3>
+      <p>At the gravitational centre of our Milky Way galaxy.</p>
+    </article>
+    <article>
+      <h3>Can we see it?</h3>
+      <p>Not directly. We observe its shadow and the emission from surrounding hot matter.</p>
+    </article>
+  </div>
+
+  <div class="explanation">
+    <h3>What are you looking at?</h3>
+    <p><b>Dark centre:</b> The black-hole shadow is a dark region in the image, not a visible surface.</p>
+    <p><b>Bright ring:</b> Emission from hot gas, shaped partly by gravitational lensing.</p>
+    <p><b>Rotating disk:</b> Matter orbiting the black hole. It is not the event horizon itself.</p>
+  </div>
+</section>
+
+<!-- STRUCTURE -->
+<section id="structure" class="page">
+  <h2>02 / Anatomy of a Black Hole</h2>
+  <p class="description">Explore the important regions around a black hole.</p>
+
+  <div class="simulation-card">
+    <canvas id="structureCanvas"></canvas>
+  </div>
+
+  <div class="info-grid">
+    <article>
+      <h3>1. Singularity</h3>
+      <p>The central region predicted by classical General Relativity where the theory's description becomes singular. A complete quantum-gravity description is still unknown.</p>
+    </article>
+    <article>
+      <h3>2. Event Horizon</h3>
+      <p>The boundary beyond which no future-directed signal can escape to distant observers.</p>
+    </article>
+    <article>
+      <h3>3. Photon Sphere</h3>
+      <p>For a non-rotating black hole, light can travel on circular photon orbits at 1.5 times the Schwarzschild radius. These orbits are unstable.</p>
+    </article>
+    <article>
+      <h3>4. Accretion Disk</h3>
+      <p>Hot gas and plasma orbiting the black hole. Friction and other processes heat the material, producing radiation.</p>
+    </article>
+    <article>
+      <h3>5. Black-Hole Shadow</h3>
+      <p>The dark image feature formed by light capture and gravitational lensing. It is larger than the event horizon.</p>
+    </article>
+    <article>
+      <h3>6. Surrounding Space</h3>
+      <p>Objects can orbit, pass by, or fall towards the black hole depending on their speed and trajectory.</p>
+    </article>
+  </div>
+
+  <div class="note">
+    Important: The photon sphere and event horizon are different.
+    The accretion disk is outside the event horizon.
+  </div>
+</section>
+
+<!-- SPACETIME -->
+<section id="spacetime" class="page">
+  <h2>03 / Einstein's General Relativity</h2>
+  <p class="description">
+    Gravity is not simply a pulling force. In General Relativity,
+    mass and energy curve spacetime, and objects follow paths
+    through this curved geometry.
+  </p>
+
+  <div class="simulation-card">
+    <canvas id="gridCanvas"></canvas>
+    <div class="canvas-label">CONCEPTUAL SPACETIME GRID</div>
+  </div>
+
+  <h3>What changes near a black hole?</h3>
+  <div class="info-grid">
+    <article>
+      <h3>Space</h3>
+      <p>Distances and the geometry of space are affected by mass.</p>
+    </article>
+    <article>
+      <h3>Time</h3>
+      <p>Clocks closer to a massive object run slower relative to clocks far away.</p>
+    </article>
+    <article>
+      <h3>Motion</h3>
+      <p>Objects and light follow paths determined by curved spacetime.</p>
+    </article>
+  </div>
+
+  <div class="equation">
+    <span>Einstein Field Equation</span>
+    <strong>Gμν = 8πG Tμν / c⁴</strong>
+    <p>Geometry of spacetime is related to the distribution of matter and energy.</p>
+  </div>
+
+  <h3>Why is this used in our project?</h3>
+  <p class="description">
+    We use General Relativity to explain why the motion of objects
+    and the paths of light change near Sagittarius A*. A flat-space
+    model cannot fully describe these effects.
+  </p>
+</section>
+
+<!-- LIGHT -->
+<section id="light" class="page">
+  <h2>04 / Gravitational Lensing</h2>
+  <p class="description">
+    Light normally travels along straight paths in flat spacetime.
+    Near a black hole, curved spacetime changes its path.
+  </p>
+
+  <div class="simulation-card">
+    <canvas id="lightCanvas"></canvas>
+  </div>
+
+  <label>Light ray starting distance (in Schwarzschild radii)</label>
+  <input id="lightDistance" type="range" min="2.5" max="12" step="0.5" value="5">
+  <p class="readout">Distance: <strong id="lightDistanceValue">5 Rs</strong></p>
+
+  <div class="explanation">
+    <h3>What happens to light?</h3>
+    <p>1. Light approaches the black hole.</p>
+    <p>2. Its trajectory bends because spacetime is curved.</p>
+    <p>3. Depending on its impact parameter and direction, it may escape, orbit temporarily, or be captured.</p>
+    <p>4. Light that crosses the event horizon cannot escape back out.</p>
+  </div>
+
+  <div class="note">
+    This is a qualitative 2D ray illustration. Exact light trajectories
+    require solving the null geodesic equations.
+  </div>
+</section>
+
+<!-- OBJECT EXPERIMENT -->
+<section id="objects" class="page">
+  <h2>05 / What Happens to Objects?</h2>
+  <p class="description">
+    Change the distance and object type to explore how a black hole
+    influences nearby matter.
+  </p>
+
+  <div class="simulation-card">
+    <canvas id="objectCanvas"></canvas>
+  </div>
+
+  <label>Select an object</label>
+  <select id="objectType">
+    <option value="star">Star</option>
+    <option value="planet">Planet</option>
+    <option value="spacecraft">Spacecraft</option>
+    <option value="gas">Gas cloud</option>
+  </select>
+
+  <label>Distance from centre (Schwarzschild radii)</label>
+  <input id="objectDistance" type="range" min="1.1" max="15" step="0.1" value="6">
+  <p class="readout">Distance: <strong id="objectDistanceValue">6 Rs</strong></p>
+
+  <label>Initial tangential speed (% of local light speed)</label>
+  <input id="objectSpeed" type="range" min="0" max="95" value="40">
+  <p class="readout">Speed: <strong id="objectSpeedValue">40%</strong></p>
+
+  <div class="result" id="objectResult">
+    Your object is in a region where orbital motion may be possible.
+  </div>
+
+  <div class="explanation">
+    <h3>Possible outcomes</h3>
+    <p><b>Stable orbit:</b> An object with suitable angular momentum can orbit the black hole.</p>
+    <p><b>Deflection:</b> An object passing nearby may change direction.</p>
+    <p><b>Accretion:</b> Gas can lose energy and angular momentum and spiral inward.</p>
+    <p><b>Capture:</b> An object on a captured trajectory crosses the event horizon.</p>
+    <p><b>Tidal disruption:</b> A sufficiently extended object can be stretched by differences in gravitational acceleration across it.</p>
+  </div>
+
+  <div class="note">
+    The experiment is an educational classification, not a full
+    orbit integrator. Actual outcomes depend on the complete
+    initial position and velocity, not distance alone.
+  </div>
+</section>
+
+<!-- RELATIVITY -->
+<section id="relativity" class="page">
+  <h2>06 / Time Dilation & Gravitational Redshift</h2>
+
+  <h3>Gravitational Time Dilation</h3>
+  <p class="description">
+    A clock closer to a non-rotating black hole runs slower relative
+    to a clock far away, when compared by distant observers.
+  </p>
+
+  <div class="equation">
+    <span>Schwarzschild Clock Formula</span>
+    <strong>dτ / dt = √(1 - Rs/r)</strong>
+    <p>dτ = time measured by a stationary local clock</p>
+    <p>dt = time measured by a distant observer</p>
+    <p>Rs = Schwarzschild radius</p>
+    <p>r = distance from the black-hole centre</p>
+  </div>
+
+  <label>Move your clock closer to the event horizon</label>
+  <input id="timeDistance" type="range" min="1.01" max="15" step="0.01" value="5">
+
+  <div class="result">
+    <h3 id="timeDistanceValue">5.00 Rs</h3>
+    <p>Relative clock rate:</p>
+    <strong id="clockRate">0.894</strong>
+    <p id="clockExplanation">The nearby stationary clock runs at about 89.4% of the distant clock's rate.</p>
+  </div>
+
+  <h3>Gravitational Redshift</h3>
+  <p class="description">
+    Light travelling outward from a strong gravitational field
+    loses energy and is observed at a lower frequency, or longer wavelength.
+  </p>
+
+  <div class="equation">
+    <span>Gravitational Redshift Formula</span>
+    <strong>f∞ / femit = √(1 - Rs/r)</strong>
+  </div>
+
+  <p class="description">
+    The closer the emission point is to the event horizon,
+    the greater the gravitational redshift for a stationary emitter.
+  </p>
+
+  <div class="note">
+    These formulas describe stationary observers outside an
+    ideal non-rotating Schwarzschild black hole. A stationary
+    observer cannot remain at the event horizon.
+  </div>
+
+  <h3>Schwarzschild Theory</h3>
+  <p class="description">
+    Karl Schwarzschild found an exact solution to Einstein's field
+    equations for the spacetime outside a spherical, non-rotating,
+    uncharged mass. It provides the simplest mathematical model
+    of a black hole.
+  </p>
+
+  <div class="equation">
+    <span>Schwarzschild Radius</span>
+    <strong>Rs = 2GM / c²</strong>
+    <p>G = gravitational constant</p>
+    <p>M = mass of the black hole</p>
+    <p>c = speed of light</p>
+  </div>
+
+  <p class="description">
+    For Sagittarius A*, the Schwarzschild radius is approximately
+    12 million kilometres.
+  </p>
+
+  <h3>What about rotation?</h3>
+  <p class="description">
+    A rotating black hole is described more accurately by the
+    Kerr solution. Rotation changes spacetime around the black
+    hole and produces an effect called frame dragging.
+  </p>
+  <p class="description">
+    The accretion disk rotates around Sagittarius A*. Do not
+    confuse its rotation with the event horizon behaving like
+    a solid spinning surface.
+  </p>
+</section>
+
+<!-- IMPORTANCE -->
+<section id="importance" class="page">
+  <h2>07 / Why Study Sagittarius A* Today?</h2>
+
+  <div class="importance-hero">
+    <h3>Understanding the invisible universe through observable physics.</h3>
+    <p>
+      Sagittarius A* allows scientists to study gravity, matter,
+      energy and time in one of the most extreme environments
+      known in nature.
+    </p>
+  </div>
+
+  <div class="info-grid">
+    <article>
+      <h3>01. Test General Relativity</h3>
+      <p>Compare mathematical predictions with real stellar orbits and black-hole observations.</p>
+    </article>
+    <article>
+      <h3>02. Understand Galaxies</h3>
+      <p>Study how central black holes interact with gas, stars and their galactic environments.</p>
+    </article>
+    <article>
+      <h3>03. Extreme Physics</h3>
+      <p>Investigate light bending, gravitational redshift, accretion and strong gravity.</p>
+    </article>
+    <article>
+      <h3>04. Modern Astronomy</h3>
+      <p>Explore how radio telescope networks and computational imaging reveal objects that cannot be seen directly.</p>
+    </article>
+  </div>
+
+  <h3>Our research question</h3>
+  <div class="research-question">
+    How does an invisible supermassive black hole influence
+    the motion of nearby objects, the path of light,
+    the passage of time and surrounding matter?
+  </div>
+
+  <h3>Conclusion</h3>
+  <p class="description">
+    Black holes are not merely mysterious dark objects. They
+    provide opportunities to test fundamental laws of physics.
+    Studying Sagittarius A* connects theoretical mathematics
+    with real astronomical observations.
+  </p>
+
+  <h3>Scientific references</h3>
+  <p><a href="https://eventhorizontelescope.org/publications/first-sagittarius-event-horizon-telescope-results-i-shadow-supermassive-black-hole" target="_blank">Event Horizon Telescope — First Sagittarius A* Results</a></p>
+  <p><a href="https://www.eso.org/public/news/eso2006/" target="_blank">ESO — Einstein's prediction and the S2 star orbit</a></p>
+  <p><a href="https://science.nasa.gov/resource/first-image-of-a-black-hole/" target="_blank">NASA — First Image of a Black Hole</a></p>
+</section>
+
+</main>
+
+<footer>
+  <h2>SAGITTARIUS A*</h2>
+  <p>BLACK HOLE PHYSICS · GENERAL RELATIVITY · SPACE SCIENCE</p>
+  <p>Educational simulation | Next Gen Expo 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
